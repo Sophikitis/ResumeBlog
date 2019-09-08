@@ -1,0 +1,19 @@
+easy_admin:
+  # BASIC CONFIG : https://symfony.com/doc/master/bundles/EasyAdminBundle/book/basic-configuration.html
+  #sitename: 'Admin ResumeMe Website'
+  entities:
+      resumeMe:
+        class: App\Entity\ResumeMe
+        form:
+          fields:
+            - { property: 'imageFile', type: 'vich_image' }
+
+
+        list:
+          fields:
+            - { property: 'filename', type: 'image', base_path: '%app.path.resume_image%' }
+        show:
+          fields:
+            - { property: 'filename', type: 'image', base_path: '%app.path.resume_image%' }
+
+
