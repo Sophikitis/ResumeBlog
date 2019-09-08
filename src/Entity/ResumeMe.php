@@ -26,6 +26,18 @@ class ResumeMe
      * @var string|null
      * @ORM\Column(type="string", length=255)
      */
+    private $filenameCv;
+
+    /**
+     * @var File|null
+     * @Vich\UploadableField(mapping="resume_cv", fileNameProperty="filenameCv")
+     */
+    private $CvFile;
+
+    /**
+     * @var string|null
+     * @ORM\Column(type="string", length=255)
+     */
     private $filename;
 
     /**
@@ -120,6 +132,7 @@ class ResumeMe
     /**
      * @param File|null $imageFile
      * @return ResumeMe
+     * @throws \Exception
      */
     public function setImageFile(?File $imageFile): ResumeMe
     {
@@ -212,6 +225,46 @@ class ResumeMe
     {
         $this->postal_code = $postal_code;
 
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFilenameCv(): ?string
+    {
+        return $this->filenameCv;
+    }
+
+    /**
+     * @param string|null $filenameCv
+     * @return ResumeMe
+     */
+    public function setFilenameCv(?string $filenameCv): ResumeMe
+    {
+        $this->filenameCv = $filenameCv;
+        return $this;
+    }
+
+    /**
+     * @return File|null
+     */
+    public function getCvFile(): ?File
+    {
+        return $this->CvFile;
+    }
+
+    /**
+     * @param File|null $CvFile
+     * @return ResumeMe
+     * @throws \Exception
+     */
+    public function setCvFile(?File $CvFile): ResumeMe
+    {
+        $this->CvFile = $CvFile;
+        if($this->CvFile instanceof UploadedFile){
+            $this->updated_at = new \DateTime('now');
+        }
         return $this;
     }
 

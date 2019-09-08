@@ -1,27 +1,33 @@
 easy_admin:
   # BASIC CONFIG : https://symfony.com/doc/master/bundles/EasyAdminBundle/book/basic-configuration.html
   #sitename: 'Admin ResumeMe Website'
+
+  #ROUTE ACTION :
+  #https://symfony.com/doc/master/bundles/EasyAdminBundle/tutorials/custom-actions.html#route-based-actions
+
+  #SEPARATE CODE :
+  #https://symfony.com/doc/master/bundles/EasyAdminBundle/tutorials/complex-backend-config.html
+
+
+
   entities:
       resumeMe:
         class: App\Entity\ResumeMe
         form:
           fields:
             - { type: 'group' , columns: 8,  label: 'Basic Information' }
-            - firstname
-            - lastname
-            - city
-            - postal_code
-            - { type: 'group' , columns: 4,  label: 'Image of profile' }
-            - { property: 'imageFile', type: 'vich_image' }
-            - { type: 'group' , columns: 8,  label: 'Contact informations' }
-            - email
-            - phone
-            - { type: 'group' , columns: 4,  label: 'Advanced options' }
+            - { property: 'firstname', columns: 6}
+            - { property: 'lastname', columns: 6}
+            - { property: 'city', columns: 6}
+            - { property: 'postal_code', columns: 6}
+            - { type: 'section', label: 'Contact', css_class: 'test2', columns: 12}
+            - { property: 'email', columns: 6}
+            - { property: 'phone', columns: 6}
             - available
-
-
-
-
+            - { type: 'group' , columns: 4,  label: 'Files' }
+            - { property: 'imageFile', type: 'vich_image', help: 'Upload your resume on format PDF' }
+            - { type: 'section', label: 'CV format PDF' }
+            - { property: 'CvFile', type: 'vich_file', help: 'Upload your pictures for resume' }
 
         list:
           fields:
@@ -29,6 +35,8 @@ easy_admin:
             - firstname
             - lastname
             - available
+            - { property: 'CvFile', template: 'cvFile.html.twig', base_path: '%app.path.resume_cv%' }
+
         show:
           fields:
             - { property: 'filename', type: 'image', base_path: '%app.path.resume_image%' }
