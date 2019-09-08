@@ -6,12 +6,29 @@ easy_admin:
         class: App\Entity\ResumeMe
         form:
           fields:
+            - { type: 'group' , columns: 8,  label: 'Basic Information' }
+            - firstname
+            - lastname
+            - city
+            - postal_code
+            - { type: 'group' , columns: 4,  label: 'Image of profile' }
             - { property: 'imageFile', type: 'vich_image' }
+            - { type: 'group' , columns: 8,  label: 'Contact informations' }
+            - email
+            - phone
+            - { type: 'group' , columns: 4,  label: 'Advanced options' }
+            - available
+
+
+
 
 
         list:
           fields:
-            - { property: 'filename', type: 'image', base_path: '%app.path.resume_image%' }
+            - { property: 'filename', type: 'image', base_path: '%app.path.resume_image%', label: 'Profile image' }
+            - firstname
+            - lastname
+            - available
         show:
           fields:
             - { property: 'filename', type: 'image', base_path: '%app.path.resume_image%' }
