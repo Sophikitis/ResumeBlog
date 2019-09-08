@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ResumeMe{% endblock %}
+
+{% block body %}
+    <h1>Create new ResumeMe</h1>
+
+    {{ include('resume_me/_form.html.twig') }}
+
+    <a href="{{ path('resume_me_index') }}">back to list</a>
+{% endblock %}
