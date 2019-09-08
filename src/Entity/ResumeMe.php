@@ -93,6 +93,11 @@ class ResumeMe
      */
     private $works;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Formations", mappedBy="resumeMe")
+     */
+    private $formations;
+
     public function __toString()
     {
         return $this->firstname;
@@ -101,6 +106,7 @@ class ResumeMe
     public function __construct()
     {
         $this->works = new ArrayCollection();
+        $this->formations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -310,6 +316,37 @@ class ResumeMe
             // set the owning side to null (unless already changed)
             if ($work->getResumeMe() === $this) {
                 $work->setResumeMe(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Formations[]
+     */
+    public function getFormations(): Collection
+    {
+        return $this->formations;
+    }
+
+    public function addFormation(Formations $formation): self
+    {
+        if (!$this->formations->contains($formation)) {
+            $this->formations[] = $formation;
+            $formation->setResumeMe($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFormation(Formations $formation): self
+    {
+        if ($this->formations->contains($formation)) {
+            $this->formations->removeElement($formation);
+            // set the owning side to null (unless already changed)
+            if ($formation->getResumeMe() === $this) {
+                $formation->setResumeMe(null);
             }
         }
 

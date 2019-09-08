@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\WorksRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\FormationsRepository")
  */
-class Works
+class Formations
 {
     /**
      * @ORM\Id()
@@ -17,19 +17,19 @@ class Works
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $title;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\ResumeMe", inversedBy="works")
+     * @ORM\ManyToOne(targetEntity="App\Entity\ResumeMe", inversedBy="formations")
      */
     private $resumeMe;
 
     /**
-     * @ORM\Column(type="string", length=100, nullable=true)
+     * @ORM\Column(type="string", length=100)
      */
-    private $company;
+    private $title;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $description;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -42,9 +42,9 @@ class Works
     private $end_at;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="string", length=150, nullable=true)
      */
-    private $description;
+    private $organisation;
 
     /**
      * @ORM\Column(type="string", length=100, nullable=true)
@@ -54,18 +54,6 @@ class Works
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getTitle(): ?string
-    {
-        return $this->title;
-    }
-
-    public function setTitle(string $title): self
-    {
-        $this->title = $title;
-
-        return $this;
     }
 
     public function getResumeMe(): ?ResumeMe
@@ -80,14 +68,26 @@ class Works
         return $this;
     }
 
-    public function getCompany(): ?string
+    public function getTitle(): ?string
     {
-        return $this->company;
+        return $this->title;
     }
 
-    public function setCompany(?string $company): self
+    public function setTitle(string $title): self
     {
-        $this->company = $company;
+        $this->title = $title;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }
@@ -116,14 +116,14 @@ class Works
         return $this;
     }
 
-    public function getDescription(): ?string
+    public function getOrganisation(): ?string
     {
-        return $this->description;
+        return $this->organisation;
     }
 
-    public function setDescription(?string $description): self
+    public function setOrganisation(?string $organisation): self
     {
-        $this->description = $description;
+        $this->organisation = $organisation;
 
         return $this;
     }

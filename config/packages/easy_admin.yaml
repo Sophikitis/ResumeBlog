@@ -40,4 +40,6 @@ easy_admin:
             - { property: 'filename', type: 'image', base_path: '%app.path.resume_image%' }
       works:
         class: App\Entity\Works
+      Formations:
+        class: App\Entity\Formations
 
