@@ -28,7 +28,6 @@ easy_admin:
             - { property: 'imageFile', type: 'vich_image', help: 'Upload your resume on format PDF' }
             - { type: 'section', label: 'CV format PDF' }
             - { property: 'CvFile', type: 'vich_file', help: 'Upload your pictures for resume' }
-
         list:
           fields:
             - { property: 'filename', type: 'image', base_path: '%app.path.resume_image%', label: 'Profile image' }
@@ -36,9 +35,9 @@ easy_admin:
             - lastname
             - available
             - { property: 'CvFile', template: 'cvFile.html.twig', base_path: '%app.path.resume_cv%' }
-
         show:
           fields:
             - { property: 'filename', type: 'image', base_path: '%app.path.resume_image%' }
-
+      works:
+        class: App\Entity\Works
 

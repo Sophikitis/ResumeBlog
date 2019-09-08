@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -85,6 +87,21 @@ class ResumeMe
      * @ORM\Column(type="integer", nullable=true)
      */
     private $postal_code;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Works", mappedBy="resumeMe")
+     */
+    private $works;
+
+    public function __toString()
+    {
+        return $this->firstname;
+    }
+
+    public function __construct()
+    {
+        $this->works = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -265,6 +282,37 @@ class ResumeMe
         if($this->CvFile instanceof UploadedFile){
             $this->updated_at = new \DateTime('now');
         }
+        return $this;
+    }
+
+    /**
+     * @return Collection|Works[]
+     */
+    public function getWorks(): Collection
+    {
+        return $this->works;
+    }
+
+    public function addWork(Works $work): self
+    {
+        if (!$this->works->contains($work)) {
+            $this->works[] = $work;
+            $work->setResumeMe($this);
+        }
+
+        return $this;
+    }
+
+    public function removeWork(Works $work): self
+    {
+        if ($this->works->contains($work)) {
+            $this->works->removeElement($work);
+            // set the owning side to null (unless already changed)
+            if ($work->getResumeMe() === $this) {
+                $work->setResumeMe(null);
+            }
+        }
+
         return $this;
     }
 
