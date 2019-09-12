@@ -8,7 +8,12 @@ easy_admin:
   #SEPARATE CODE :
   #https://symfony.com/doc/master/bundles/EasyAdminBundle/tutorials/complex-backend-config.html
 
-
+  design:
+    menu:
+      - { label: 'Summary', route: 'summary_resume', params: { id: 2 }, default: true}
+      - { label: 'Me', entity: 'resumeMe' }
+      - { label: 'Works', entity: 'works' }
+      - { label: 'Formations', entity: 'Formations' }
 
   entities:
       resumeMe:
@@ -30,6 +35,7 @@ easy_admin:
             - { property: 'CvFile', type: 'vich_file', help: 'Upload your pictures for resume' }
         list:
           fields:
+            - ID
             - { property: 'filename', type: 'image', base_path: '%app.path.resume_image%', label: 'Profile image' }
             - firstname
             - lastname

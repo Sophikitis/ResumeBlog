@@ -19,22 +19,22 @@ class WorksRepository extends ServiceEntityRepository
         parent::__construct($registry, Works::class);
     }
 
-    // /**
-    //  * @return Works[] Returns an array of Works objects
-    //  */
-    /*
-    public function findByExampleField($value)
+
+    /**
+     * @param $idMe
+     * @return mixed[]
+     * @throws \Doctrine\DBAL\DBALException
+     */
+    public function findDataRelationById($idMe)
     {
-        return $this->createQueryBuilder('w')
-            ->andWhere('w.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('w.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        $conn = $this->getEntityManager()
+            ->getConnection();
+        $sql = 'SELECT * FROM works where works.resume_me_id = :idme';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(array('idme' => $idMe));
+        return $stmt->fetchAll();
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?Works

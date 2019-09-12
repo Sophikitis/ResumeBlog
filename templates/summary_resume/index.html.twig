@@ -1,0 +1,179 @@
+{% extends '@!EasyAdmin/default/layout.html.twig' %}
+
+{#
+{% extends 'base.html.twig' %}
+#}
+{% block head_stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('ea_custom') }}
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic'
+          rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block head_javascript %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('ea_custom') }}
+{% endblock %}
+
+{% block title %}Hello SummaryResumeController!{% endblock %}
+
+{% block main %}
+
+    <div class="container">
+        <div class="row p-3">
+            <div class="card mb-4 shadow-sm w-100">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="my-0 font-weight-normal">Basic Informations</h4>
+                        </div>
+                        <div class="col-1">
+                            <a href="{{ path('summary_resume_edit', {id: infos.id, entity: 'resumeMe'}) }}">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><strong>Firstname : </strong>{{ infos.firstname }}</li>
+                                <li><strong>Lastname : </strong>{{ infos.lastname }}</li>
+                                <li><strong>Profession name : </strong>{{ infos.lastname }}</li>
+                                <li>
+                                    <strong>Carrer Speech : </strong>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut blanditiis
+                                        consectetur dicta dolores eaque esse exercitationem hic id in magnam mollitia
+                                        neque nulla obcaecati quae quas qui, quia repellat saepe!</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><strong>Available : </strong>{{ infos.available }}</li>
+                                <li><strong>Phone : </strong>{{ infos.phone }}</li>
+                                <li><strong>Email : </strong>{{ infos.email }}</li>
+                                <li><strong>City :</strong>{{ infos.city }}</li>
+                                <li><strong>Code City :</strong>{{ infos.postalCode }}</li>
+                                <br>
+                                <li><strong>PDF:</strong>
+                                    <a target="_blank" href="{{ vich_uploader_asset(infos, 'CvFile') }}">View
+                                        CV(PDF)</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>
+                                    <strong>Picture :</strong>
+                                    <br>
+                                    <img src="{{ vich_uploader_asset(infos, 'imageFile') }}" alt="Picture profile"
+                                         style="width: 80%;">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {# END BASIC INFORMATIONS#}
+
+    <div class="container">
+        <div class="row p-3">
+            {% for work in works %}
+                <div class="col-6">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="my-0 font-weight-normal">Experience #{{ loop.index }}</h4>
+                                </div>
+                                <div class="col-1">
+                                    <a href="{{ path('summary_resume_edit', {id: work.id, entity: 'works'}) }}">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><strong>Title : </strong>{{ work.title }}</li>
+                                <li><strong>Company : </strong>{{ work.company }}</li>
+                                <li><strong>City : </strong>{{ work.city }}</li>
+                                <li><strong>Start job : </strong>{{ work.start_at }}</li>
+                                <li><strong>End job : </strong>{{ work.end_at }}</li>
+                                <li><strong>Description Job : </strong>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus earum eius
+                                        expedita laboriosam minima officia perspiciatis possimus, quia quidem!
+                                        Aspernatur delectus, deleniti enim eveniet magni molestias officia quidem unde.
+                                    </p>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row p-3">
+            {% for formation in formations %}
+                <div class="col-6">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="my-0 font-weight-normal">Formation #{{ loop.index }}</h4>
+                                </div>
+                                <div class="col-1">
+                                    <a href="{{ path('summary_resume_edit', {id: formation.id, entity: 'Formations'}) }}">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><strong>Title : </strong>{{ formation.title }}</li>
+                                <li><strong>Organisation : </strong>{{ formation.organisation }}</li>
+                                <li><strong>City : </strong>{{ formation.city }}</li>
+                                <li><strong>Start formation : </strong>{{ formation.start_at }}</li>
+                                <li><strong>End formation : </strong>{{ formation.end_at }}</li>
+                                <li><strong>Description Formation : </strong>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus earum eius
+                                        expedita laboriosam minima officia perspiciatis possimus, quia quidem!
+                                        Aspernatur delectus, deleniti enim eveniet magni molestias officia quidem unde.
+                                    </p>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+{#
+    <a href="{{ path('summary_resume_edit', {id: resume_infos.id}) }}"  class="btn btn-primary">Edit</a>
+
+{{ resume_infos.id }}
+
+ <div class="profile-container">
+                <div class="summaryBlockEdit">
+                    <a class="summaryBtnEdit" href="{{ path('summary_resume_edit', {id: resume_infos.id, entity: 'resumeMe'}) }}">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                </div>
+#}

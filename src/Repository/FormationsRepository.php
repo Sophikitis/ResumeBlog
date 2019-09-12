@@ -19,6 +19,21 @@ class FormationsRepository extends ServiceEntityRepository
         parent::__construct($registry, Formations::class);
     }
 
+    /**
+     * @param $idMe
+     * @return mixed[]
+     * @throws \Doctrine\DBAL\DBALException
+     */
+    public function findDataRelationById($idMe): array
+    {
+        $conn = $this->getEntityManager()
+            ->getConnection();
+        $sql = 'SELECT * FROM formations where formations.resume_me_id = :idme';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(array('idme' => $idMe));
+        return $stmt->fetchAll();
+    }
+
     // /**
     //  * @return Formations[] Returns an array of Formations objects
     //  */
