@@ -7,8 +7,11 @@ easy_admin:
 
   #SEPARATE CODE :
   #https://symfony.com/doc/master/bundles/EasyAdminBundle/tutorials/complex-backend-config.html
-
   design:
+    assets:
+      # all kinds of assets are supported and linked accordingly
+      css:
+        - 'build/ea_custom.css'
     menu:
       - { label: 'Summary', route: 'summary_resume', params: { id: 2 }, default: true}
       - { label: 'Me', entity: 'resumeMe' }
@@ -23,11 +26,14 @@ easy_admin:
             - { type: 'group' , columns: 8,  label: 'Basic Information' }
             - { property: 'firstname', columns: 6}
             - { property: 'lastname', columns: 6}
-            - { property: 'city', columns: 6}
-            - { property: 'postal_code', columns: 6}
+            - { property: 'profession', columns: 12, css_class: 'mwFormEdit'}
+            - { property: 'intro_carrer', columns: 12, type_option: 'text', css_class: 'mwFormEdit'}
+
             - { type: 'section', label: 'Contact', css_class: 'test2', columns: 12}
             - { property: 'email', columns: 6}
             - { property: 'phone', columns: 6}
+            - { property: 'city', columns: 6}
+            - { property: 'postal_code', columns: 6}
             - available
             - { type: 'group' , columns: 4,  label: 'Files' }
             - { property: 'imageFile', type: 'vich_image', help: 'Upload your resume on format PDF' }

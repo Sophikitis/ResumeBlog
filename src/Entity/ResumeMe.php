@@ -98,6 +98,16 @@ class ResumeMe
      */
     private $formations;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $profession;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $introCarrer;
+
     public function __toString()
     {
         return $this->firstname;
@@ -349,6 +359,30 @@ class ResumeMe
                 $formation->setResumeMe(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getProfession(): ?string
+    {
+        return $this->profession;
+    }
+
+    public function setProfession(?string $profession): self
+    {
+        $this->profession = $profession;
+
+        return $this;
+    }
+
+    public function getIntroCarrer(): ?string
+    {
+        return $this->introCarrer;
+    }
+
+    public function setIntroCarrer(?string $introCarrer): self
+    {
+        $this->introCarrer = $introCarrer;
 
         return $this;
     }

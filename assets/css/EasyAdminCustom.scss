@@ -1,1 +1,7 @@
 @import "../../vendor/easycorp/easyadmin-bundle/assets/css/easyadmin-theme/variables";
+
+.mwFormEdit{
+  input, textarea {
+    max-width: 100% !important;
+  }
+}
