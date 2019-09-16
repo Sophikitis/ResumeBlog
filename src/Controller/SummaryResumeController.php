@@ -35,8 +35,12 @@ class SummaryResumeController extends AbstractController
         $formations = $formationsRepository->findDataRelationById($id);
 
 
+        if($me === null){
+            return $this->redirectToRoute('easyadmin');
+        }
 
-        return $this->render('summary_resume/login.html.twig', [
+
+        return $this->render('summary_resume/index.html.twig', [
             'controller_name' => 'SummaryResumeController',
             'infos' => $me,
             'works' => $works,
