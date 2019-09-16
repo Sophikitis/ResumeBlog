@@ -13,7 +13,7 @@ easy_admin:
       css:
         - 'build/ea_custom.css'
     menu:
-      - { label: 'Summary', route: 'summary_resume', params: { id: 2 }, default: true}
+      - { label: 'Summary', route: 'summary_resume', params: { id: 3 }, default: false}
       - { label: 'Me', entity: 'resumeMe' }
       - { label: 'Works', entity: 'works' }
       - { label: 'Formations', entity: 'Formations' }

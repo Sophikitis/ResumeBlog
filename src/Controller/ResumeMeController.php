@@ -20,7 +20,7 @@ class ResumeMeController extends AbstractController
      */
     public function index(ResumeMeRepository $resumeMeRepository): Response
     {
-        return $this->render('resume_me/index.html.twig', [
+        return $this->render('resume_me/login.html.twig', [
             'resume_mes' => $resumeMeRepository->findAll(),
         ]);
     }

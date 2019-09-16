@@ -36,7 +36,7 @@ class SummaryResumeController extends AbstractController
 
 
 
-        return $this->render('summary_resume/index.html.twig', [
+        return $this->render('summary_resume/login.html.twig', [
             'controller_name' => 'SummaryResumeController',
             'infos' => $me,
             'works' => $works,
