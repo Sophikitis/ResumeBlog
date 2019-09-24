@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('website') }}
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+        {% endblock %}
+    </head>
+    <body class="menu3">
+    {% block preloader %}
+        <div class="preloader">
+            <div class="anim pulse"><i class="ion-ios-bolt-outline"></i></div>
+        </div>
+        <div class="preloader-left"></div>
+    {% endblock %}
+    <div class="inline-menu-container style3 showx">
+        <ul class="inline-menu">
+            <li class="about menu-item active">
+                <a class="" style="color: unset;"  href="{{ path('homepage') }}">Resume</a>
+            </li>
+            <li class="blog menu-item">Blog</li>
+            <li class="contact menu-item">
+                <a style="color: unset;"  class="redirect" href="{{ path('contact') }}"> Contact</a>
+            </li>
+        </ul>
+    </div>
+    <section class="home">
+        <div class="container">
+            {{ render(controller('App\\Controller\\DefaultController::menu', {})) }}
+     <div id="swup" class="transition-fade">
+         {% block body %}
+
+         {% endblock %}
+     </div>
+        {% block javascripts %}
+            {{ encore_entry_script_tags('website') }}
+        {% endblock %}
+        </div>
+    </section>
+    </body>
+</html>

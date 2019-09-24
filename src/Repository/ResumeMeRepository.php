@@ -19,6 +19,25 @@ class ResumeMeRepository extends ServiceEntityRepository
         parent::__construct($registry, ResumeMe::class);
     }
 
+    /*public function findFirst(){
+        return $this->createQueryBuilder('m')
+            ->getQuery()
+            ->getSingleResult();
+    }*/
+
+    /**
+     * @return mixed
+     * @throws \Doctrine\ORM\NoResultException
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+    public function findFirst() {
+        $qb = $this->createQueryBuilder('m');
+        $qb->setMaxResults( 1 );
+        $qb->orderBy('m.id', 'ASC');
+
+        return $qb->getQuery()->getSingleResult();
+    }
+
     // /**
     //  * @return ResumeMe[] Returns an array of ResumeMe objects
     //  */

@@ -31,6 +31,7 @@ Encore
      */
     .addEntry('app', './assets/js/app.js')
     .addEntry('ea_custom', './assets/js/eaCustom.js')
+    .addEntry('website', './assets/js/website.js')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 
