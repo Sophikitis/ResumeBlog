@@ -35,6 +35,9 @@ easy_admin:
             - { property: 'city', columns: 6}
             - { property: 'postal_code', columns: 6}
             - available
+            - { type: 'section', label: 'Social', css_class: 'test2', columns: 12}
+            - { property: 'socialLinkedin', columns: 6, label: 'Linkedin'}
+            - { property: 'socialGithub', columns: 6, label: 'Github'}
             - { type: 'group' , columns: 4,  label: 'Files' }
             - { property: 'imageFile', type: 'vich_image', help: 'Upload your resume on format PDF' }
             - { type: 'section', label: 'CV format PDF' }

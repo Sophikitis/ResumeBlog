@@ -108,6 +108,16 @@ class ResumeMe
      */
     private $introCarrer;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $socialLinkedin;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $socialGithub;
+
     public function __toString()
     {
         return $this->firstname;
@@ -383,6 +393,31 @@ class ResumeMe
     public function setIntroCarrer(?string $introCarrer): self
     {
         $this->introCarrer = $introCarrer;
+
+        return $this;
+    }
+
+
+    public function getSocialLinkedin(): ?string
+    {
+        return $this->socialLinkedin;
+    }
+
+    public function setSocialLinkedin(?string $socialLinkedin): self
+    {
+        $this->socialLinkedin = $socialLinkedin;
+
+        return $this;
+    }
+
+    public function getSocialGithub(): ?string
+    {
+        return $this->socialGithub;
+    }
+
+    public function setSocialGithub(?string $socialGithub): self
+    {
+        $this->socialGithub = $socialGithub;
 
         return $this;
     }
