@@ -45,18 +45,6 @@ class DefaultController extends AbstractController
 
 
     /**
-     * @Route("/contact", name="contact")
-     */
-    public function contact()
-    {
-        return $this->render('default/contact.html.twig', [
-            'controller_name' => 'DefaultController',
-
-        ]);
-    }
-
-
-    /**
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function menu()
