@@ -28,6 +28,9 @@ security:
 
             access_denied_url: /login
 
+            role_hierarchy:
+                ROLE_SUPER_ADMIN: ROLE_ADMIN
+
 
               # where to redirect after logout
                 # target: app_any_route
