@@ -39,7 +39,8 @@ class DefaultController extends AbstractController
         return $this->render('default/index1.html.twig', [
             'controller_name' => 'DefaultController',
             'me' => $this->me,
-            'works' => $works
+            'works' => $works,
+            'educations' => $formations,
         ]);
     }
 
