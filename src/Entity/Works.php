@@ -51,6 +51,11 @@ class Works
      */
     private $city;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $currentWork;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -136,6 +141,18 @@ class Works
     public function setCity(?string $city): self
     {
         $this->city = $city;
+
+        return $this;
+    }
+
+    public function getCurrentWork(): ?bool
+    {
+        return $this->currentWork;
+    }
+
+    public function setCurrentWork(bool $currentWork): self
+    {
+        $this->currentWork = $currentWork;
 
         return $this;
     }

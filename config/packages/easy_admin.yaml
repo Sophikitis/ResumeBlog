@@ -13,7 +13,7 @@ easy_admin:
       css:
         - 'build/ea_custom.css'
     menu:
-      - { label: 'Summary', route: 'summary_resume', params: { id: 4 }, default: false}
+      - { label: 'Summary', route: 'summary_resume', params: { id: 1 }, default: false}
       - { label: 'Me', entity: 'resumeMe' }
       - { label: 'Works', entity: 'works' }
       - { label: 'Formations', entity: 'Formations' }
@@ -55,6 +55,28 @@ easy_admin:
             - { property: 'filename', type: 'image', base_path: '%app.path.resume_image%' }
       works:
         class: App\Entity\Works
+        form:
+          fields:
+            - currentWork
+            - {property: 'Title', type: 'text'}
+            - {property: 'Company', type: 'text'}
+            - Description
+            - {property: 'City', type: 'text'}
+            - {property: 'start_at', type: 'date', type_options: { widget: 'single_text' } }
+            - {property: 'end_at', type: 'date', type_options: { widget: 'single_text' } }
+            - {property: 'resume_me', type: 'entity', type_options: { class: 'App\Entity\ResumeMe', multiple: false } }
       Formations:
         class: App\Entity\Formations
+        form:
+          fields:
+            - {property: 'Title', type: 'text'}
+            - Description
+            - {property: 'Organisation', type: 'text'}
+            - {property: 'City', type: 'text'}
+            - {property: 'start_at', type: 'date', type_options: { widget: 'single_text' } }
+            - {property: 'end_at', type: 'date', type_options: { widget: 'single_text' } }
+            - {property: 'resume_me', type: 'entity', type_options: { class: 'App\Entity\ResumeMe', multiple: false } }
+
+
+
 

@@ -38,11 +38,18 @@
                                     <div class="exp-holder">
                                         {# LOOP HERE#}
                                         {% for work in works %}
-
                                         <div class="exp">
                                             <div class="hgroup">
                                                 <h4><span>{{ work.title }}</span> @ {{ work.company }}</h4>
-                                                <h5>{{ work.start_at }} - <span class="current">Present</span></h5>
+                                                {% if work.start_at is defined and work.start_at is not empty
+                                                    and work.end_at is defined and work.end_at is not empty%}
+
+                                                    {% if work.current_work == true %}
+                                                        {{ work.start_at|date("F Y")}} - <span class="current">Present</span>
+                                                    {% else %}
+                                                        <h5>{{work.start_at|date("F Y")}} - {{ work.end_at|date("F Y") }}</h5>
+                                                    {% endif %}
+                                                {% endif %}
                                             </div>
                                             <p>{{ work.description }}</p>
                                         </div>
@@ -66,7 +73,11 @@
                                         <div class="exp">
                                             <div class="hgroup">
                                                 <h4>{{educ.title}} | <span>{{educ.organisation}}</span></h4>
-                                                <h5>Sept 2017 - Nov 2017</h5>
+                                                {% if educ.start_at is defined and educ.start_at is not empty
+                                                    and educ.end_at is defined and educ.end_at is not empty%}
+                                                    <h5>{{educ.start_at|date("Y")}} - {{ educ.end_at|date("Y") }}</h5>
+                                                {% endif %}
+
                                             </div>
                                             <p> {{ educ.description }}</p>
                                         </div>
