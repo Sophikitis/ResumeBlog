@@ -1177,14 +1177,22 @@ h2.menu-item:after {
     color: #ddd;
     font-size: 36px;
     line-height: 45px;
+
 }
 
 .timeline.experience:after {
     content: '\f0b1';
+    font-weight: 900;
+    font-family: 'Font Awesome\ 5 Free';
+
+
 }
 
 .timeline.education:after {
-    content: '\f559';
+    content: '\f19d';
+    font-weight: 900;
+    font-family: 'Font Awesome\ 5 Free';
+
 }
 
 .exp {
