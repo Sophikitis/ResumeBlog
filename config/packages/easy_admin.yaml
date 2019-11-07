@@ -17,6 +17,7 @@ easy_admin:
       - { label: 'Me', entity: 'resumeMe' }
       - { label: 'Works', entity: 'works' }
       - { label: 'Formations', entity: 'Formations' }
+      - { label: 'Technos', entity: 'Technos'}
 
   entities:
       resumeMe:
@@ -66,6 +67,7 @@ easy_admin:
             - {property: 'start_at', type: 'date', type_options: { widget: 'single_text' } }
             - {property: 'end_at', type: 'date', type_options: { widget: 'single_text' } }
             - {property: 'resume_me', type: 'entity', type_options: { class: 'App\Entity\ResumeMe', multiple: false } }
+            - {property: 'technos', type: 'entity', type_options: { class: 'App\Entity\Technos', multiple: true } }
       Formations:
         class: App\Entity\Formations
         form:
@@ -77,7 +79,14 @@ easy_admin:
             - {property: 'start_at', type: 'date', type_options: { widget: 'single_text' } }
             - {property: 'end_at', type: 'date', type_options: { widget: 'single_text' } }
             - {property: 'resume_me', type: 'entity', type_options: { class: 'App\Entity\ResumeMe', multiple: false } }
-
-
+      Technos:
+        class: App\Entity\Technos
+        form:
+          fields:
+            - {property: 'label', type: 'text'}
+        list:
+          fields:
+            - ID
+            - label
 
 

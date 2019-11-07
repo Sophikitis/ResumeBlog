@@ -35,6 +35,21 @@ class WorksRepository extends ServiceEntityRepository
         return $stmt->fetchAll();
     }
 
+    /**
+     * @param $idWorks
+     * @return mixed[]
+     * @throws \Doctrine\DBAL\DBALException
+     */
+    public function getTechnosByWorksId($idWorks)
+    {
+        $conn = $this->getEntityManager()
+            ->getConnection();
+        $sql = 'SELECT label FROM technos join works_technos wt on technos.id = wt.technos_id where works_id = :idWorks';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(array('idWorks' => $idWorks));
+        return $stmt->fetchAll(\PDO::FETCH_COLUMN);
+    }
+
 
     /*
     public function findOneBySomeField($value): ?Works

@@ -28,6 +28,8 @@
                         </div>
                     </div>
 
+
+                    {{ dump() }}
                     {# EXPERIENCES#}
                     {% if works is defined and works is not empty %}
                     <div class="block-content">
@@ -51,7 +53,15 @@
                                                     {% endif %}
                                                 {% endif %}
                                             </div>
-                                            <p>{{ work.description }}</p>
+                                            <p class="workP">{{ work.description }}</p>
+                                            {% if work.techno is defined %}
+                                                {% for techno in work.techno %}
+                                                    {#TODO : Limit 10 technos ?#}
+                                                    <span class="badge badge-secondary">
+                                                        {{ techno }}
+                                                    </span>
+                                                {% endfor %}
+                                            {% endif %}
                                         </div>
                                         {% endfor %}
                                     </div>

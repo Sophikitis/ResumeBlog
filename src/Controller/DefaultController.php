@@ -30,6 +30,19 @@ class DefaultController extends AbstractController
 
         try {
             $works = $worksRepository->findDataRelationById($this->me->getId());
+
+            foreach ($works as &$val){
+                $temp = $worksRepository->getTechnosByWorksId($val['id']) ;
+                if(!empty($temp)){
+                    $val['techno'] = $temp;
+                }
+
+                //$val['techno'] = $worksRepository->getTechnosByWorksId($val['id']);
+
+            }
+
+
+
             $formations = $formationsRepository->findDataRelationById($this->me->getId());
         } catch (NoResultException $e) {
         } catch (NonUniqueResultException $e) {
