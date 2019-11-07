@@ -118,6 +118,11 @@ class ResumeMe
      */
     private $socialGithub;
 
+    /**
+     * @ORM\Column(type="string", length=15)
+     */
+    private $interest;
+
     public function __toString()
     {
         return $this->firstname;
@@ -418,6 +423,18 @@ class ResumeMe
     public function setSocialGithub(?string $socialGithub): self
     {
         $this->socialGithub = $socialGithub;
+
+        return $this;
+    }
+
+    public function getInterest(): ?string
+    {
+        return $this->interest;
+    }
+
+    public function setInterest(string $interest): self
+    {
+        $this->interest = $interest;
 
         return $this;
     }

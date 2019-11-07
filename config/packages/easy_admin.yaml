@@ -35,6 +35,7 @@ easy_admin:
             - { property: 'city', columns: 6}
             - { property: 'postal_code', columns: 6}
             - available
+            - { property: 'interest', type: 'choice', type_options: { expanded: true, choices: [CDI: CDI, CDD: CDD, FREELANCE: FREELANCE] }}
             - { type: 'section', label: 'Social', css_class: 'test2', columns: 12}
             - { property: 'socialLinkedin', columns: 6, label: 'Linkedin'}
             - { property: 'socialGithub', columns: 6, label: 'Github'}
