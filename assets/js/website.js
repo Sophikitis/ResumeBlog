@@ -9,6 +9,7 @@ import 'bootstrap'
 import Swup from 'swup';
 const swup = new Swup(); // only this line when included with script tag
 
+console.log("Website.js");
 
 require('bootstrap/dist/css/bootstrap.css');
 require('@fortawesome/fontawesome-free/css/all.min.css');

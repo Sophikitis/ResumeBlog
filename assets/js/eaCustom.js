@@ -10,4 +10,12 @@ require('@fortawesome/fontawesome-free/js/all.js');*/
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 // const $ = require('jquery');
 
-console.log('Hello Webpack Encore! Edit me in assets/js/eaCustom.js');
+import $ from 'jquery';
+import 'popper.js'
+import 'bootstrap'
+
+require('bootstrap/dist/css/bootstrap.css');
+
+
+
+console.log('Hello eaCustom');
