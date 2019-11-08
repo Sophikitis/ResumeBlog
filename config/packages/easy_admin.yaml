@@ -18,6 +18,7 @@ easy_admin:
       - { label: 'Works', entity: 'works' }
       - { label: 'Formations', entity: 'Formations' }
       - { label: 'Technos', entity: 'Technos'}
+      - { label: 'Blog', entity: 'Articles'}
 
   entities:
       resumeMe:
@@ -88,5 +89,7 @@ easy_admin:
           fields:
             - ID
             - label
+      Articles:
+        class: App\Entity\Articles
 
 
