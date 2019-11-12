@@ -14,7 +14,8 @@ import $ from 'jquery';
 import 'popper.js'
 import 'bootstrap'
 
-require('bootstrap/dist/css/bootstrap.css');
+//require('bootstrap/dist/css/bootstrap.css');
+
 
 
 

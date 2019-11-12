@@ -12,6 +12,8 @@ easy_admin:
       # all kinds of assets are supported and linked accordingly
       css:
         - 'build/ea_custom.css'
+    form_theme:
+      - '@EasyAdmin/form/bootstrap_4.html.twig'
     menu:
       - { label: 'Summary', route: 'summary_resume', params: { id: 1 }, default: false}
       - { label: 'Me', entity: 'resumeMe' }
@@ -90,6 +92,13 @@ easy_admin:
             - ID
             - label
       Articles:
+        templates:
+          edit: 'EasyAdmin/articles/edit.html.twig'
+          new: 'EasyAdmin/articles/new.html.twig'
         class: App\Entity\Articles
+        form:
+          fields:
+            - { property: 'title', type: 'text'}
+            - { property: 'body',  type: 'KMS\FroalaEditorBundle\Form\Type\FroalaEditorType', columns: 12}
 
 

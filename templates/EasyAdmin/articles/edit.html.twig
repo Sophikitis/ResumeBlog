@@ -1,0 +1,26 @@
+{% extends '@EasyAdmin/default/edit.html.twig' %}
+
+{% block content_title %}
+    <h1> Test title </h1>
+{% endblock %}
+
+
+{% block head_stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('froala') }}
+
+{% endblock %}
+
+
+{% block entity_form %}
+
+
+    {{ form(form) }}
+
+{% endblock entity_form %}
+
+{% block head_javascript %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('froala') }}
+{% endblock %}
+

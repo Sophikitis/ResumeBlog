@@ -2842,6 +2842,11 @@ friendly-errors-webpack-plugin@^2.0.0-beta.1:
     string-width "^2.0.0"
     strip-ansi "^5"
 
+froala-editor@^3.0.6:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/froala-editor/-/froala-editor-3.0.6.tgz#26c1c20acf2f7b3681699c8185a94e804a713dcc"
+  integrity sha512-AU12qDl4t41n/s7awRp3tFE5dWytxwwH4od/JmhhwAEzORyH5OVaKB8Y+oLQQwRNgCTnvSscy9yA518utFx8YA==
+
 from2@^2.1.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/from2/-/from2-2.3.0.tgz#8bfb5502bde4a4d36cfdeea007fcca21d7e382af"
