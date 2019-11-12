@@ -100,5 +100,7 @@ easy_admin:
           fields:
             - { property: 'title', type: 'text'}
             - { property: 'body',  type: 'KMS\FroalaEditorBundle\Form\Type\FroalaEditorType', columns: 12}
+            - { property: 'coverImageFile', type: 'vich_image', label: 'Profile image' }
+
 
 

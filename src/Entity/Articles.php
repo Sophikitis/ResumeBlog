@@ -3,9 +3,14 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArticlesRepository")
+ * @Vich\Uploadable()
  */
 class Articles
 {
@@ -25,6 +30,21 @@ class Articles
      * @ORM\Column(type="text")
      */
     private $body;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $coverImageName;
+
+
+    /**
+     * @var File|null
+     * @Vich\UploadableField(mapping="articles", fileNameProperty="coverImageName")
+     */
+    private $coverImageFile;
+
+
+
 
     public function getId(): ?int
     {
@@ -52,6 +72,39 @@ class Articles
     {
         $this->body = $body;
 
+        return $this;
+    }
+
+    public function getCoverImageName(): ?string
+    {
+        return $this->coverImageName;
+    }
+
+    public function setCoverImageName(?string $coverImageName): self
+    {
+        $this->coverImageName = $coverImageName;
+
+        return $this;
+    }
+
+    /**
+     * @return File|null
+     */
+    public function getCoverImageFile(): ?File
+    {
+        return $this->coverImageFile;
+    }
+
+    /**
+     * @param File|null $coverImageFile
+     * @return Articles
+     */
+    public function setCoverImageFile(?File $coverImageFile): Articles
+    {
+        $this->coverImageFile = $coverImageFile;
+//        if($this->coverImageFile instanceof UploadedFile){
+//            $this->updated_at = new \DateTime('now');
+//        }
         return $this;
     }
 }
