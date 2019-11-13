@@ -24,6 +24,8 @@ kms_froala_editor:
     ## TODO : Solution pour dossier dynamique ??
     ## TODO 2 : Sauvegarder en base de donnée l'image pour l'entité ??
     #imageUploadURL: "admin.blog.image.upload"
+    #imageUploadParams:
+        #id: "{{ form.id }}"
     #events:
         ## supprime une image du server a partir de l'editeur |
         ## TODO : FIX -> Probleme si on ne sauvegarde pas l'article aprés la suppresion de l'image sur le serveur

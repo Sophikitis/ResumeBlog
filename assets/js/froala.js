@@ -48,6 +48,7 @@ function froalaDisplayError(p_editor, error ) {
     alert(`Error ${error.code}: ${error.message}`);
 }
 
+
 window.froalaDisplayError = froalaDisplayError;
 
 

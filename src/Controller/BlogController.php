@@ -15,16 +15,16 @@ class BlogController extends EasyAdminController
 {
     /**
      * @Route("/admin/blog/upload_image", name="admin.blog.image.upload")
+     * @return JsonResponse
      */
-    public function index()
+    public function uploadedImage()
     {
         try {
             $response = FroalaEditor_Image::upload('/uploads/blog/');
-            dump($response);
             return new JsonResponse($response);
         }
         catch (Exception $e) {
-            return new JsonResponse(['error' => 'Token invalide'], 400);
+            return new JsonResponse(['error' => 'image not uploaded'], 400);
         }
     }
 
@@ -40,7 +40,7 @@ class BlogController extends EasyAdminController
             return new JsonResponse(['success' => 1]);
         }
         catch (Exception $e) {
-            return new JsonResponse(['error' => 'Token invalide'], 400);
+            return new JsonResponse(['error' => 'error'], 400);
         }
     }
 
