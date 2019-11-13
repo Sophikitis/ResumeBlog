@@ -2,23 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61d64385-16b1-4f0f-b50b-4138ea4edd45" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/rebootMefolio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rebootMefolio.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/froala.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/froala.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/easy_admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/easy_admin.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/kms_froala_editor.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/kms_froala_editor.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/blog/01876701cc42c3144afbdd7cbea41a9827794c83.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/blog/166e9d3c010ec6f98bb603b470e2101128e58232.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/blog/167730e6fa481da65509a2f78b2656e9b85c248d.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/blog/779bfe1bd6473d9f27ff9bf9903a7fb2ba781937.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/blog/83ffd884ff5dc575008048b3bd52591084bf1c99.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/blog/877c62ecb83a0a3ffeafbb4d9da13e72ee6754c1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/blog/8f2997ae393a2aa3f4cc975c83ba9fb11bb98208.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/blog/c3e2ada9f48718f15715db70dd59a1598f307351.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/EasyAdmin/articles/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/EasyAdmin/articles/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BlogController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

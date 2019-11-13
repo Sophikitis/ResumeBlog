@@ -2,28 +2,34 @@
 
 namespace App\Controller;
 
+use EasyCorp\Bundle\EasyAdminBundle\Controller\EasyAdminController;
 use KMS\FroalaEditorBundle\KMSFroalaEditorBundle;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
-
-
 use FroalaEditor_Image;
-class BlogController extends AbstractController
+
+
+class BlogController extends EasyAdminController
 {
     /**
-     * @Route("/blog", name="blog")
+     * @Route("/admin/blog/upload_image", name="admin.blog.image.upload")
      */
     public function index()
     {
-        return $this->render('blog/index.html.twig', [
-            'controller_name' => 'BlogController',
-        ]);
+        try {
+            $response = FroalaEditor_Image::upload('/uploads/blog/');
+            dump($response);
+            return new JsonResponse($response);
+        }
+        catch (Exception $e) {
+            return new JsonResponse(['error' => 'Token invalide'], 400);
+        }
     }
 
     /**
-     * @Route("/blog/delete_image", name="blog.image.delete")
+     * @Route("/admin/blog/delete_image", name="admin.blog.image.delete")
      * @param Request $request
      * @return JsonResponse
      */

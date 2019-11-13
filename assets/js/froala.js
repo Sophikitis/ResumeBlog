@@ -18,23 +18,13 @@ import 'froala-editor/js/languages/fr.js';
 import 'froala-editor/js/plugins.pkgd.min.js';
 import 'froala-editor/css/plugins.pkgd.min.css';
 
-
-// $(function() {
-//     // Catch the image being removed.
-//     debugger
-//     $('#articles_body').on('FroalaEditor.image.removed', function (e, editor, $img) {
-//         console.log('pute pute')
-//     })});
-
-
-
-
 window.FroalaEditor = FroalaEditor;
 
-function froalaImageRemoved($img) {
+// REQUEST AJAX FOR DELETE IMAGE --[+INFOS]--> kms_froala_editor.yaml
+/*function froalaImageRemoved($img) {
     $.ajax({
         method: 'POST',
-        url: '/blog/delete_image',
+        url: '/admin/blog/delete_image',
         data:{
             src : $img.attr('src')
         }
@@ -45,18 +35,20 @@ function froalaImageRemoved($img) {
         .fail (function (err){
             console.log('Image delete probleme' + JSON.stringify(err))
         })
-}
+
+
+        // A descendre tout en bas si ne fonctionne pas
+        window.froalaImageRemoved = froalaImageRemoved;
+
+
+}*/
 
 
 function froalaDisplayError(p_editor, error ) {
-
-    console.log("okok");
-    return;
     alert(`Error ${error.code}: ${error.message}`);
 }
 
 window.froalaDisplayError = froalaDisplayError;
-window.froalaImageRemoved = froalaImageRemoved;
 
 
 

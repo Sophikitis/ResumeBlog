@@ -93,6 +93,7 @@ easy_admin:
             - label
       Articles:
         templates:
+          # TODO : AJOUTER CUSTOM CONTROLLER : BLOG CONTROLLER
           edit: 'EasyAdmin/articles/edit.html.twig'
           new: 'EasyAdmin/articles/new.html.twig'
         class: App\Entity\Articles

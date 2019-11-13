@@ -15,30 +15,37 @@ kms_froala_editor:
     imageAllowedTypes: ['jpeg', 'jpg', 'png']
     # The image upload folder in your /web directory.
     # Default: "/upload".
-    imageUploadFolder: "/uploads/blog/"
-    events:
-        image.removed: function (img) {froalaImageRemoved(img);}
-
-        #image.removed: function ($img){ deleteImage(); }
+    imageUploadFolder: "/uploads/blog/articles"
+    imageUploadPath: "/uploads/blog/articles"
 
 
-    # The image upload URL base.
-    # Usage: if you are using URL rewritting for your assets.
-    # Default: same value as provided as folder.
-    imageUploadPath: "/uploads/blog"
+    ##### Custom gestion image ##### TODO : Voir si vraiment utile d'implementer ço ou de laisser par defaut
+    ## Route du controlleur BlogController qui gere l'upload |
+    ## TODO : Solution pour dossier dynamique ??
+    ## TODO 2 : Sauvegarder en base de donnée l'image pour l'entité ??
+    #imageUploadURL: "admin.blog.image.upload"
+    #events:
+        ## supprime une image du server a partir de l'editeur |
+        ## TODO : FIX -> Probleme si on ne sauvegarde pas l'article aprés la suppresion de l'image sur le serveur
+        #image.removed: function (img) {froalaImageRemoved(img);}
+
+        ## Fonction pas creer, je garde pour verifier un truc mais a trash dés que possible |
+        ## TODO : A trash
+        #image.uploaded: function(res) {froalaImageUpload(res);}
+
 
     includeCodeMirror: false
-
     # Disable Font Awesome inclusion.
     includeFontAwesome: false
-
     # Disable all bundle javascripts inclusion (not concerning CodeMirror).
     # Usage: if you are using Grunt or other and you want to include yourself all scripts.
     includeJS: false
-
     # Disable all bundle CSS inclusion (not concerning Font Awesome nor CodeMirror).
     # Usage: if you are using Grunt or other and you want to include yourself all stylesheets.
     includeCSS: false
-    customJS: /build/froala.js
+
+
+    # Disable | TODO : si tout fonctionne bien sans customJS = TRASH !
+    #customJS: /build/froala.js
 
 
