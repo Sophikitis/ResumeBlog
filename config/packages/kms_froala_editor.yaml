@@ -16,8 +16,9 @@ kms_froala_editor:
     # The image upload folder in your /web directory.
     # Default: "/upload".
     imageUploadFolder: "/uploads/blog/"
-    #events:
-        #keyup: function(keyupEvent) {del();}
+    events:
+        image.removed: function (img) {froalaImageRemoved(img);}
+
         #image.removed: function ($img){ deleteImage(); }
 
 
