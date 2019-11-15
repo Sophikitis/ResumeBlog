@@ -92,11 +92,17 @@ easy_admin:
             - ID
             - label
       Articles:
+        controller: App\Controller\BlogController
         templates:
-          # TODO : AJOUTER CUSTOM CONTROLLER : BLOG CONTROLLER
           edit: 'EasyAdmin/articles/edit.html.twig'
           new: 'EasyAdmin/articles/new.html.twig'
         class: App\Entity\Articles
+        list:
+          fields:
+            - {property: 'ID', label: 'ID'}
+            - {property: 'uuid', label: 'Ref.folder'}
+            - title
+
         form:
           fields:
             - { property: 'title', type: 'text'}

@@ -6,6 +6,8 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Ramsey\Uuid\Uuid;
+
 
 
 /**
@@ -20,6 +22,14 @@ class Articles
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -43,7 +53,10 @@ class Articles
      */
     private $coverImageFile;
 
-
+    /**
+     * @ORM\Column(type="string")
+     */
+    public $uuid;
 
 
     public function getId(): ?int
@@ -107,4 +120,24 @@ class Articles
 //        }
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getUuid()
+    {
+        return $this->uuid;
+    }
+
+    /**
+     * @param mixed $uuid
+     */
+    public function setUuid( string $uuid): void
+    {
+        $this->uuid = $uuid;
+    }
+
+
+
+
 }

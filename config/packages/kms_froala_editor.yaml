@@ -15,8 +15,8 @@ kms_froala_editor:
     imageAllowedTypes: ['jpeg', 'jpg', 'png']
     # The image upload folder in your /web directory.
     # Default: "/upload".
-    imageUploadFolder: "/uploads/blog/articles"
-    imageUploadPath: "/uploads/blog/articles"
+    #imageUploadFolder: "/uploads/blog/articles"
+    #imageUploadPath: "/uploads/blog/articles/6"
 
 
     ##### Custom gestion image ##### TODO : Voir si vraiment utile d'implementer ço ou de laisser par defaut
