@@ -22,4 +22,15 @@ class BlogArticles
         }
         $em = $args->getObjectManager();
     }
+
+
+    public function preUpdate(LifecycleEventArgs $args)
+    {
+        $entity = $args->getObject();
+
+        if(!$entity instanceof Articles){
+            return;
+        }
+        $em = $args->getObjectManager();
+    }
 }

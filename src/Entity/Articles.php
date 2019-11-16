@@ -13,6 +13,7 @@ use Ramsey\Uuid\Uuid;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArticlesRepository")
  * @Vich\Uploadable()
+ * @ORM\HasLifecycleCallbacks()
  */
 class Articles
 {
@@ -22,6 +23,8 @@ class Articles
      * @ORM\Column(type="integer")
      */
     private $id;
+
+
 
     /**
      * @param mixed $id
@@ -57,6 +60,33 @@ class Articles
      * @ORM\Column(type="string")
      */
     public $uuid;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isPublished;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $created_at;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updated_at;
+
+
+
+
+    /**
+     * Articles constructor.
+     * @throws \Exception
+     */
+    public function __construct()
+    {
+        $this->created_at = new \DateTime;
+    }
 
 
     public function getId(): ?int
@@ -135,6 +165,51 @@ class Articles
     public function setUuid( string $uuid): void
     {
         $this->uuid = $uuid;
+    }
+
+    public function getIsPublished(): ?bool
+    {
+        return $this->isPublished;
+    }
+
+    public function setIsPublished(bool $isPublished): self
+    {
+        $this->isPublished = $isPublished;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $created_at): self
+    {
+        $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(?\DateTimeInterface $updated_at): self
+    {
+        $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+
+    /**
+     * @ORM\PreUpdate
+     * @throws \Exception
+     */
+    public function saveUpdate(){
+        $this->updated_at = new \DateTime;
     }
 
 

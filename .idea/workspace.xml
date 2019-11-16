@@ -2,23 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61d64385-16b1-4f0f-b50b-4138ea4edd45" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/40a5eead-eb4b-424b-b52a-3da52ec7bf6c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/40a5eead-eb4b-424b-b52a-3da52ec7bf6c.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/rebootMefolio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rebootMefolio.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/easy_admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/easy_admin.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/kms_froala_editor.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/kms_froala_editor.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/blog/articles/663231ca202a107ad3182a69214a535c8f797f86.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/blog/articles/cover/5dcb606d13e71086738036.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BlogController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Articles.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Articles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ArticlesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ArticlesRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/EasyAdmin/articles/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/EasyAdmin/articles/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EventListener/BlogArticles.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventListener/BlogArticles.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +53,7 @@
         <item name="resumeBlog@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="resumeBlog: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="formations: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="articles: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -83,6 +72,7 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="127.0.0.1" id="5f0b148e-04d9-4451-8e1d-25d4280bf382" name="Local Server" port="8000" />
@@ -309,6 +299,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Entity/Articles.php</url>
+          <line>211</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="masterDetails">
     <states>

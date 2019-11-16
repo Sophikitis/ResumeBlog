@@ -102,12 +102,15 @@ easy_admin:
             - {property: 'ID', label: 'ID'}
             - {property: 'uuid', label: 'Ref.folder'}
             - title
+            - isPublished
+            - created_at
+            - updated_at
 
         form:
           fields:
             - { property: 'title', type: 'text'}
             - { property: 'body',  type: 'KMS\FroalaEditorBundle\Form\Type\FroalaEditorType', columns: 12}
             - { property: 'coverImageFile', type: 'vich_image', label: 'Profile image' }
-
+            - isPublished
 
 

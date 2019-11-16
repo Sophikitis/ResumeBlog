@@ -32,8 +32,8 @@ services:
 
 
     # keep the example if use later
-#    App\EventListener\BlogArticles:
-#        tags:
-#            -
-#                name: 'doctrine.event_listener'
-#                event: 'prePersist'
+    App\EventListener\BlogArticles:
+        tags:
+            -
+                name: 'doctrine.event_listener'
+                event: 'preUpdate'
