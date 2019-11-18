@@ -9,7 +9,6 @@ use Doctrine\ORM\EntityManager;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\EasyAdminController;
 use KMS\FroalaEditorBundle\Form\Type\FroalaEditorType;
 use KMS\FroalaEditorBundle\KMSFroalaEditorBundle;
-use Ramsey\Uuid\Uuid;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
@@ -77,13 +76,14 @@ class BlogController extends EasyAdminController
     // create and edit actions
     protected function createEntityFormBuilder($entity, $view)
     {
+
         /*
          * TODO : find solution more clean
          * */
         if(empty($_POST)) {
             if(!isset($entity->uuid))
             {
-                $uuid = Uuid::uuid4()->toString();
+                $uuid = uniqid();
             }else{
                 $uuid = $entity->uuid;
             }
