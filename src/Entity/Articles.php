@@ -25,7 +25,6 @@ class Articles
     private $id;
 
 
-
     /**
      * @param mixed $id
      */
@@ -62,7 +61,7 @@ class Articles
     public $uuid;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", options={"default": false})
      */
     private $isPublished;
 
