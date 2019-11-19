@@ -22,14 +22,15 @@ easy_admin:
     form_theme:
       - '@EasyAdmin/form/bootstrap_4.html.twig'
     menu:
-      - { label: 'Summary', route: 'summary_resume', params: { id: 1 }, default: false}
+      - { label: 'Back to site', route: 'homepage', icon: 'backward'}
+      - { label: 'Summary', route: 'summary_resume',icon: 'file-pdf' , params: { id: 1 }, default: false}
       - { label: 'CV' }
-      - { label: 'Identity', entity: 'resumeMe' }
-      - { label: 'Works', entity: 'works' }
-      - { label: 'Formations', entity: 'Formations' }
-      - { label: 'Technos', entity: 'Technos'}
+      - { label: 'Identity', entity: 'resumeMe', icon: 'user-edit' }
+      - { label: 'Works', entity: 'works', icon: 'briefcase'}
+      - { label: 'Formations', entity: 'Formations', icon: 'user-graduate' }
+      - { label: 'Technos', entity: 'Technos', icon: 'code'}
       - { label: 'Blog' }
-      - { label: 'Articles', entity: 'Articles'}
+      - { label: 'Articles', entity: 'Articles', icon: 'newspaper'}
 
   entities:
       resumeMe:
