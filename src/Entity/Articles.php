@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Cocur\Slugify\Slugify;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -144,9 +145,9 @@ class Articles
     public function setCoverImageFile(?File $coverImageFile): Articles
     {
         $this->coverImageFile = $coverImageFile;
-//        if($this->coverImageFile instanceof UploadedFile){
-//            $this->updated_at = new \DateTime('now');
-//        }
+        if($this->coverImageFile instanceof UploadedFile){
+            $this->updated_at = new \DateTime;
+        }
         return $this;
     }
 
@@ -201,6 +202,12 @@ class Articles
 
         return $this;
     }
+
+    public function getSlug():string
+    {
+        return (new Slugify())->slugify($this->title);
+    }
+
 
 
     /**

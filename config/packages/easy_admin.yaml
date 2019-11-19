@@ -7,6 +7,13 @@ easy_admin:
 
   #SEPARATE CODE :
   #https://symfony.com/doc/master/bundles/EasyAdminBundle/tutorials/complex-backend-config.html
+
+
+  #TODO :
+  # [] Preview cover image in field
+  # [] summary param id : find other solution
+
+
   design:
     assets:
       # all kinds of assets are supported and linked accordingly
@@ -16,11 +23,13 @@ easy_admin:
       - '@EasyAdmin/form/bootstrap_4.html.twig'
     menu:
       - { label: 'Summary', route: 'summary_resume', params: { id: 1 }, default: false}
-      - { label: 'Me', entity: 'resumeMe' }
+      - { label: 'CV' }
+      - { label: 'Identity', entity: 'resumeMe' }
       - { label: 'Works', entity: 'works' }
       - { label: 'Formations', entity: 'Formations' }
       - { label: 'Technos', entity: 'Technos'}
-      - { label: 'Blog', entity: 'Articles'}
+      - { label: 'Blog' }
+      - { label: 'Articles', entity: 'Articles'}
 
   entities:
       resumeMe:
@@ -50,7 +59,7 @@ easy_admin:
         list:
           fields:
             - ID
-            - { property: 'filename', type: 'image', base_path: '%app.path.resume_image%', label: 'Profile image' }
+            - { property: 'filename', template: 'cvImage.html.twig', base_path: '%app.path.resume_image%', label: "profile Image" }
             - firstname
             - lastname
             - available
@@ -108,7 +117,7 @@ easy_admin:
 
         form:
           fields:
-            - { property: 'title', type: 'text'}
+            - { property: 'title', type: 'text', columns: 12}
             - { property: 'body',  type: 'KMS\FroalaEditorBundle\Form\Type\FroalaEditorType', columns: 12}
             - { property: 'coverImageFile', type: 'vich_image', label: 'Profile image' }
             - isPublished

@@ -7,8 +7,8 @@ kms_froala_editor:
     toolbarInline: false
     toolbarVisibleWithoutSelection: true
     tableColors: [ "#FFFFFF", "#FF0000" ]
-    height: 400
-#    width: 700
+    #height: 400
+    #width: 200%
     zIndex: 0
     pluginsDisabled: [ "save" ]
     charCounterCount: true

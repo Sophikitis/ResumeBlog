@@ -10,9 +10,50 @@
 
     {% block entity_form %}
 
+        <div class="container">
+            {{ form_start(form) }}
+            <div class="row" style="display: flex;justify-content: space-between;">
+                <div class="col-9" style="">
+                    <div class="fieldsContainer">
+                        <div class="title">
+                            {{form_widget(form.title)}}
+                        </div>
+                        <div class="body">
+                            {{form_widget(form.body)}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3" style="color: white;">
+                    <div class="fieldsContainer" style="background-color: grey;">
+                        <div class="informations">
+                            <h5> Informations</h5>
+                            <span>created at : 01.01.0000</span>
+                            <br>
+                            <span>updated at : 01.01.0000</span>
+                            <br>
+                            <br>
+                            <span> author : Jérém</span>
+                        </div>
+                        <div class="separator"></div>
+                        <div class="status">
+                            <h5>Status</h5>
+                            {{ form_widget(form.isPublished) }}
+                        </div>
+                        <div class="separator"></div>
+                        <div class="cover">
+                            <h5>Cover image</h5>
+                            {{ form_widget(form.coverImageFile) }}
+                        </div>
 
 
-        {{ form(form) }}
+                    </div>
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+
+
     {% endblock entity_form %}
 {% endblock main %}
 

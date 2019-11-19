@@ -1,7 +1,16 @@
 @import "../../vendor/easycorp/easyadmin-bundle/assets/css/easyadmin-theme/variables";
 
-.mwFormEdit{
+.mwFormEdit {
   input, textarea {
     max-width: 100% !important;
   }
 }
+.imagePreviewListEasyA{
+    width: 60px;
+    height: 60px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+

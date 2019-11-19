@@ -120,6 +120,9 @@
       <path value="$PROJECT_DIR$/vendor/kms/froala-editor-bundle" />
       <path value="$PROJECT_DIR$/vendor/froala/wysiwyg-editor-php-sdk" />
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/cocur/slugify" />
+      <path value="$PROJECT_DIR$/vendor/liip/imagine-bundle" />
+      <path value="$PROJECT_DIR$/vendor/imagine/imagine" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

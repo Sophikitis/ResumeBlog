@@ -1,0 +1,29 @@
+.fieldsContainer{
+  background: #eee !important;
+  border: 2px solid #80808021;
+  border-radius: 5px;
+  .separator{
+    background: #a2a2a2;
+    height: 2px;
+    width: 90%;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .title, .body, .cover, .status, .informations{
+    padding: 15px;
+  }
+  .status, .informations{
+    color: gray;
+  }
+  .body{
+    height: auto;
+  }
+  .easyadmin-vich-image-actions{
+    display: grid;
+    .input-file-container{
+      color: dimgray;
+    }
+  }
+
+
+}

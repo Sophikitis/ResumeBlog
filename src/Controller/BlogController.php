@@ -11,6 +11,7 @@ use KMS\FroalaEditorBundle\Form\Type\FroalaEditorType;
 use KMS\FroalaEditorBundle\KMSFroalaEditorBundle;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -18,6 +19,14 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use FroalaEditor_Image;
+use Vich\UploaderBundle\Form\Type\VichFileType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
+
+
+
+/*TODO :
+[] delete folder who containt image of article when delete article
+*/
 
 
 class BlogController extends EasyAdminController
@@ -71,11 +80,30 @@ class BlogController extends EasyAdminController
     }
 
 
+    // Overdrive function for delete folder who contain the images of article
+    /**
+     * @param object $entity
+     */
+    protected function removeEntity($entity)
+    {
+        $filesystem = new Filesystem();
+        $path = getcwd()."/uploads/blog/articles/".$entity->uuid;
+
+       parent::removeEntity($entity);
+
+        if ($filesystem->exists($path)) {
+            $filesystem->remove($path);
+        }
+    }
+
+
 
     // Creates the form builder used to create the form rendered in the
     // create and edit actions
     protected function createEntityFormBuilder($entity, $view)
     {
+
+        dump($entity->getSlug());
 
         /*
          * TODO : find solution more clean
@@ -96,19 +124,34 @@ class BlogController extends EasyAdminController
         /*
          * custom form with the froalaEditor and custom path uploadFolder
          * */
-        $builder->add( "body", FroalaEditorType::class, array(
+        $builder->add("title", TextType::class, array(
+            "label" => false,
+            'attr' => array(
+                'placeholder' => "Titre de l'article",
+            )
+        ))
+            ->add( "body", FroalaEditorType::class, array(
             "language" => "fr",
             "imageUploadFolder" => "/uploads/blog/articles/$uuid",
             "imageUploadPath" => "/uploads/blog/articles/$uuid",
             "toolbarInline" => false,
             "tableColors" => [ "#FFFFFF", "#FF0000" ],
-            "saveParams" => [ "id" => "myEditorField" ]
+            "saveParams" => [ "id" => "myEditorField" ],
+            "label" => false,
+                "heightMin" => "400",
+                "heightMax" => "450",
         ))
         ->add("uuid", HiddenType::class, array(
             "data" => $uuid
-        ));
+        ))
+        ->add('coverImageFile', VichImageType::class, array(
+            "label" => false,
+            'required' => false
+        ))
+    ;
 
         return $builder;
 
     }
+
 }
