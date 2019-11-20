@@ -3,12 +3,15 @@
 namespace App\Controller;
 
 use App\Entity\ResumeMe;
+use App\Repository\ArticlesRepository;
 use App\Repository\FormationsRepository;
 use App\Repository\ResumeMeRepository;
 use App\Repository\WorksRepository;
+use Doctrine\DBAL\DBALException;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
@@ -23,9 +26,14 @@ class DefaultController extends AbstractController
 
     /**
      * @Route("/", name="homepage")
-     * @throws \Doctrine\DBAL\DBALException
+     * @param ResumeMeRepository $meRepository
+     * @param WorksRepository $worksRepository
+     * @param FormationsRepository $formationsRepository
+     * @param ArticlesRepository $articlesRepository
+     * @return Response
+     * @throws DBALException
      */
-    public function index(ResumeMeRepository $meRepository,WorksRepository $worksRepository, FormationsRepository $formationsRepository)
+    public function index(ResumeMeRepository $meRepository,WorksRepository $worksRepository, FormationsRepository $formationsRepository, ArticlesRepository $articlesRepository)
     {
 
         try {
@@ -36,14 +44,9 @@ class DefaultController extends AbstractController
                 if(!empty($temp)){
                     $val['techno'] = $temp;
                 }
-
-                //$val['techno'] = $worksRepository->getTechnosByWorksId($val['id']);
-
             }
-
-
-
             $formations = $formationsRepository->findDataRelationById($this->me->getId());
+
         } catch (NoResultException $e) {
         } catch (NonUniqueResultException $e) {
         }
@@ -59,12 +62,35 @@ class DefaultController extends AbstractController
 
 
     /**
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @return Response
      */
-    public function menu()
+    public function side()
     {
-        return $this->render('default/_menu.html.twig', [
+        return $this->render('default/_side.html.twig', [
             'me' => $this->me,
         ]);
     }
+
+    /**
+     * @param ArticlesRepository $articlesRepository
+     * @return Response
+     */
+    public function nav(ArticlesRepository $articlesRepository)
+    {
+
+        $blog = $articlesRepository->findAll();
+        $hiddenBlogMenu = true;
+        if(!empty($blog)){
+            foreach ($blog as $articles){
+                if($articles->getIsPublished()){
+                    $hiddenBlogMenu = false;
+                }
+            }
+        }
+        return $this->render('default/_nav.html.twig', [
+            'hiddenBlogMenu' => $hiddenBlogMenu
+        ]);
+    }
+
+
 }

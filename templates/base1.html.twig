@@ -16,20 +16,14 @@
         </div>
         <div class="preloader-left"></div>
     {% endblock %}
-    <div class="inline-menu-container style3 showx">
-        <ul class="inline-menu">
-            <li class="about menu-item active">
-                <a class="" style="color: unset;"  href="{{ path('homepage') }}">Resume</a>
-            </li>
-            <li class="blog menu-item">Blog</li>
-            <li class="contact menu-item">
-                <a style="color: unset;"  class="redirect" href="{{ path('contact') }}"> Contact</a>
-            </li>
-        </ul>
-    </div>
+
+    {# NAVIGATION #}
+    {{ render(controller('App\\Controller\\DefaultController::nav', {})) }}
+
     <section class="home">
         <div class="container">
-            {{ render(controller('App\\Controller\\DefaultController::menu', {})) }}
+            {# SIDEBAR #}
+            {{ render(controller('App\\Controller\\DefaultController::side', {})) }}
      <div id="swup" class="transition-fade">
          {% block body %}
 

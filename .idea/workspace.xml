@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="61d64385-16b1-4f0f-b50b-4138ea4edd45" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/easy_admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/easy_admin.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EventListener/BlogArticles.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventListener/BlogArticles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base1.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base1.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/default/_menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/_side.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/27/2727e56333089e53a977766713eb2a27ff9ccf77ef5a6249834ab97ea3c3413a.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/27/2727e56333089e53a977766713eb2a27ff9ccf77ef5a6249834ab97ea3c3413a.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -206,7 +209,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/default" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -215,10 +218,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/default" />
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/src/EventListener" />
       <recent name="$PROJECT_DIR$/assets/js" />
-      <recent name="$PROJECT_DIR$/templates/default" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/uploads/website" />
