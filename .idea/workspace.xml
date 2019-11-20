@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61d64385-16b1-4f0f-b50b-4138ea4edd45" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EventListener/BlogArticles.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventListener/BlogArticles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base1.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base1.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/default/_menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/_side.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/27/2727e56333089e53a977766713eb2a27ff9ccf77ef5a6249834ab97ea3c3413a.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/27/2727e56333089e53a977766713eb2a27ff9ccf77ef5a6249834ab97ea3c3413a.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/default/_menu.html.twig" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

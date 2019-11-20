@@ -1,0 +1,14 @@
+<div class="inline-menu-container style3 showx">
+    <ul class="inline-menu">
+        <li class="about menu-item active">
+            <a class="" style="color: unset;"  href="{{ path('homepage') }}">Resume</a>
+        </li>
+
+        {% if not(hiddenBlogMenu) %}
+            <li class="blog menu-item">Blog</li>
+        {% endif%}
+        <li class="contact menu-item">
+            <a style="color: unset;"  class="redirect" href="{{ path('contact') }}"> Contact</a>
+        </li>
+    </ul>
+</div>
