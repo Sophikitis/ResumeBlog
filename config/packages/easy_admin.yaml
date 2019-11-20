@@ -102,7 +102,7 @@ easy_admin:
             - ID
             - label
       Articles:
-        controller: App\Controller\BlogController
+        controller: App\Controller\Admin\BlogController
         templates:
           edit: 'EasyAdmin/articles/edit.html.twig'
           new: 'EasyAdmin/articles/new.html.twig'

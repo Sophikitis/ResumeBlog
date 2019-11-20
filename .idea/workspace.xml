@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61d64385-16b1-4f0f-b50b-4138ea4edd45" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/EventListener/BlogArticles.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventListener/BlogArticles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/default/_menu.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/website.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/website.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/easy_admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/easy_admin.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/BlogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SummaryResumeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/SummaryResumeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/default/_nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/_nav.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -213,14 +219,15 @@
     <property name="settings.editor.selected.configurable" value="database.main" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Controller/Admin" />
+      <recent name="$PROJECT_DIR$/public/uploads/website" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/default" />
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/src/EventListener" />
       <recent name="$PROJECT_DIR$/assets/js" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/uploads/website" />
     </key>
   </component>
   <component name="RunDashboard">

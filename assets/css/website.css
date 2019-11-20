@@ -1,5 +1,5 @@
 .transition-fade {
-    transition: 0.4s;
+    transition: 0.1s;
     opacity: 1;
 }
 
@@ -723,7 +723,7 @@ h2.menu-item:after {
 }
 
 .inline-menu li.active {
-    cursor: text;
+    cursor: unset;
 }
 
 .inline-menu-container.style2 {
@@ -2811,4 +2811,9 @@ h4.package {
 
 .workP{
     margin-bottom: 5px!important;
+}
+
+
+.contact, .blog, .about {
+    cursor: unset!important;
 }
