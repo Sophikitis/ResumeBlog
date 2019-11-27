@@ -14,6 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,13 +24,12 @@ use Vich\UploaderBundle\Form\Type\VichFileType;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 
 
-
 /*TODO :
 [] delete folder who containt image of article when delete article
 */
 
 
-class BlogController extends EasyAdminController
+class AdminBlogController extends EasyAdminController
 {
     /**
      * @var ArticlesRepository
@@ -48,6 +48,8 @@ class BlogController extends EasyAdminController
     }
 
 
+    // Remove if success overdrive ea function
+
     /**
      * @Route("/admin/blog/upload_image", name="admin.blog.image.upload")
      * @return JsonResponse
@@ -57,8 +59,7 @@ class BlogController extends EasyAdminController
         try {
             $response = FroalaEditor_Image::upload('/uploads/blog/');
             return new JsonResponse($response);
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             return new JsonResponse(['error' => 'image not uploaded'], 400);
         }
     }
@@ -73,23 +74,23 @@ class BlogController extends EasyAdminController
         try {
             $response = FroalaEditor_Image::delete($request->get('src'));
             return new JsonResponse(['success' => 1]);
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             return new JsonResponse(['error' => 'error'], 400);
         }
     }
 
 
     // Overdrive function for delete folder who contain the images of article
+
     /**
      * @param object $entity
      */
     protected function removeEntity($entity)
     {
         $filesystem = new Filesystem();
-        $path = getcwd()."/uploads/blog/articles/".$entity->uuid;
+        $path = getcwd() . "/uploads/blog/articles/" . $entity->uuid;
 
-       parent::removeEntity($entity);
+        parent::removeEntity($entity);
 
         if ($filesystem->exists($path)) {
             $filesystem->remove($path);
@@ -102,20 +103,16 @@ class BlogController extends EasyAdminController
     // create and edit actions
     protected function createEntityFormBuilder($entity, $view)
     {
-
-        dump($entity->getSlug());
-
         /*
          * TODO : find solution more clean
          * */
-        if(empty($_POST)) {
-            if(!isset($entity->uuid))
-            {
+        if (empty($_POST)) {
+            if (!isset($entity->uuid)) {
                 $uuid = uniqid();
-            }else{
+            } else {
                 $uuid = $entity->uuid;
             }
-        }elseif ($_POST['articles']['uuid']){
+        } elseif ($_POST['articles']['uuid']) {
             $uuid = $_POST['articles']['uuid'];
         }
 
@@ -130,25 +127,29 @@ class BlogController extends EasyAdminController
                 'placeholder' => "Titre de l'article",
             )
         ))
-            ->add( "body", FroalaEditorType::class, array(
-            "language" => "fr",
-            "imageUploadFolder" => "/uploads/blog/articles/$uuid",
-            "imageUploadPath" => "/uploads/blog/articles/$uuid",
-            "toolbarInline" => false,
-            "tableColors" => [ "#FFFFFF", "#FF0000" ],
-            "saveParams" => [ "id" => "myEditorField" ],
-            "label" => false,
+            ->add("body", FroalaEditorType::class, array(
+                "language" => "fr",
+                "imageUploadFolder" => "/uploads/blog/articles/$uuid",
+                "imageUploadPath" => "/uploads/blog/articles/$uuid",
+                "toolbarInline" => false,
+                "tableColors" => ["#FFFFFF", "#FF0000"],
+                "saveParams" => ["id" => "myEditorField"],
+                "label" => false,
                 "heightMin" => "400",
                 "heightMax" => "450",
-        ))
-        ->add("uuid", HiddenType::class, array(
-            "data" => $uuid
-        ))
-        ->add('coverImageFile', VichImageType::class, array(
-            "label" => false,
-            'required' => false
-        ))
-    ;
+            ))
+            ->add("uuid", HiddenType::class, array(
+                "data" => $uuid
+            ))
+            ->add('coverImageFile', VichImageType::class, array(
+                "label" => false,
+                'required' => false
+            ))
+            ->add('excerpt', TextareaType::class, array(
+                'attr' => array(
+                    'placeholder' => "Synopsis",
+                )
+            ));
 
         return $builder;
 

@@ -1,6 +1,5 @@
 require('../css/website.css');
 
-import $ from 'jquery';
 import 'popper.js'
 import 'bootstrap'
 /*TODO : REMOVE ISOTOPE*/
@@ -45,18 +44,25 @@ require('@fortawesome/fontawesome-free/js/all.js');
         return false;
     });
 
-    //Blog post Modal
-    $('.open-post').on('click', function() {
-        var postUrl = $(this).attr("href");
-        $('.inline-menu-container').removeClass('showx');
-        $('.sidebar-menu').addClass('hidex');
-        $('.content-blocks.pop').addClass('showx');
-        $('.content-blocks.pop section').load(postUrl);
-        return false;
-    });
+    // //Blog post Modal
+    // $('#okok').on('click', function() {
+    //     console.log('oooo')
+    //     $('.bback').removeClass('d-none')
+    // });
+    //     console.log("2")
+    //     debugger;
+    //     var postUrl = $(this).attr("href");
+    //     $('.inline-menu-container').removeClass('showx');
+    //     $('.sidebar-menu').addClass('hidex');
+    //     $('.content-blocks.pop').addClass('showx');
+    //     $('.content-blocks.pop section').load(postUrl);
+    //     return false;
+    // });
 
     //On Click Open Menu Items
     $('.menu-block, .menu-item').on('click', function() {
+        console.log('2')
+        $('.bback').addClass('d-none')
         $('.name-block').addClass('reverse');
         $('.name-block-container').addClass('reverse');
         $('.menu-blocks').addClass('hidex');

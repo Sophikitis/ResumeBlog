@@ -2817,3 +2817,20 @@ h4.package {
 .contact, .blog, .about {
     cursor: unset!important;
 }
+
+.cuBtn {
+    border: 2px solid transparent;
+    border-radius: 0;
+    padding: 5px 10px;
+    margin: 20px 0;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all .3s;
+    position: relative;
+    color: #FFF;
+    background-color: #333;
+    z-index: 20;
+    letter-spacing: 2px;
+    overflow: hidden;
+}

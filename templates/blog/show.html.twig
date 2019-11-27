@@ -1,0 +1,78 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}Sophikitis | Blog{% endblock %}
+
+
+
+
+
+{% block body %}
+
+    <div class="content-blocks blog showx">
+
+        <section class="content">
+            <div class="block-content mb-0">
+
+                <div class="row">
+                    <div class="col-md-10 mx-auto">
+                        <a class="cuBtn" href="{{ path('blog')}}">Back</a>
+
+
+                        <div id="blog-header" style="background: url('{{ vich_uploader_asset(article, 'coverImageFile') | imagine_filter('cover')  }} '); background-size: cover;">
+                            <div class="overlay"></div>
+                            <div class="single-post-title">
+                                <h1>{{ article.title }}</h1>
+                                <p class="post-info">
+                                    <span class="post-author">Posted by Jérémie</span>
+                                    <span class="slash"></span>
+                                    <span class="post-date">{{ article.createdAt |date("F Y") }}</span>
+                                    <span class="slash"></span>
+                                    <span class="post-catetory">Category</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="block-content mb-0">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="single-post">
+                                        <div class="post">
+                                            <div class="post-body">
+                                                {{ article.body | raw }}
+                                            </div>
+                                            {#<div class="author-box row">
+                                                <div class="col-sm-2">
+                                                    <img src="" class="rounded-circle" alt="..." />
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <h3>John Sparrow<span> | Author</span></h3>
+                                                    <p>He is the jack of all trade, but master of none. Ne cum invidunt constituto, sanctus accusam an usu, ea mandamus incorrupte mel. Pro cu purto graeco. Wisi sonet elitr eos in</p>
+                                                </div>
+                                            </div>#}
+                                            <ul id="blog-social">
+                                                <li>Share this : </li>
+                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a> </li>
+                                                <li><a href="#"><i class="fab fa-twitter"></i></a> </li>
+                                            </ul>
+                                            {#<div class="project-nav text-center">
+                        <span class="float-left">
+                            <a class="open-project" href="project-5.html">&leftarrow; Previous Project</a>
+                        </span>
+                                                <span class="">
+                            <a id="close-project" href="#"><i class="ion-grid"></i></a>
+                        </span>
+                                                <span class="float-right">
+                            <a class="open-project" href="project-1.html">Next Project &rightarrow; </a>
+                        </span>
+                                            </div>#}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+{% endblock %}

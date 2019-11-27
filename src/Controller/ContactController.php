@@ -29,8 +29,7 @@ class ContactController extends AbstractController
                 ->setBody(
                     $contactFormData['message'],
                     'text/plain'
-                )
-            ;
+                );
 
             $mailer->send($message);
 

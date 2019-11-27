@@ -1,6 +1,6 @@
 {% if(item.filename) %}
 <div class="sl-item imagePreviewListEasyA"
-     style="background-image: url('{{ vich_uploader_asset(item, 'imageFile') | imagine_filter('medium') }}')">
+     style="background-image: url('{{ vich_uploader_asset(item, 'imageFile') | imagine_filter('cover') }}')">
 </div>
 {% else %}
 <div class="sl-item imagePreviewListEasyA"

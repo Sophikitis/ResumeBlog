@@ -102,7 +102,7 @@ easy_admin:
             - ID
             - label
       Articles:
-        controller: App\Controller\Admin\BlogController
+        controller: App\Controller\Admin\AdminBlogController
         templates:
           edit: 'EasyAdmin/articles/edit.html.twig'
           new: 'EasyAdmin/articles/new.html.twig'
@@ -121,6 +121,7 @@ easy_admin:
             - { property: 'title', type: 'text', columns: 12}
             - { property: 'body',  type: 'KMS\FroalaEditorBundle\Form\Type\FroalaEditorType', columns: 12}
             - { property: 'coverImageFile', type: 'vich_image', label: 'Profile image' }
+            - excerpt
             - isPublished
 
 

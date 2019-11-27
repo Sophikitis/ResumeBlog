@@ -76,6 +76,11 @@ class Articles
      */
     private $updated_at;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $excerpt;
+
 
 
 
@@ -216,6 +221,18 @@ class Articles
      */
     public function saveUpdate(){
         $this->updated_at = new \DateTime;
+    }
+
+    public function getExcerpt(): ?string
+    {
+        return $this->excerpt;
+    }
+
+    public function setExcerpt(?string $excerpt): self
+    {
+        $this->excerpt = $excerpt;
+
+        return $this;
     }
 
 
