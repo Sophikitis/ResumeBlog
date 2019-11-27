@@ -14,7 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class DefaultController extends AbstractController
+class HomeController extends AbstractController
 {
 
     private $me;
@@ -52,7 +52,7 @@ class DefaultController extends AbstractController
         }
 
 
-        return $this->render('default/index1.html.twig', [
+        return $this->render('home/index1.html.twig', [
             'controller_name' => 'DefaultController',
             'me' => $this->me,
             'works' => $works,
@@ -66,7 +66,7 @@ class DefaultController extends AbstractController
      */
     public function side()
     {
-        return $this->render('default/_side.html.twig', [
+        return $this->render('home/_side.html.twig', [
             'me' => $this->me,
         ]);
     }
@@ -87,7 +87,7 @@ class DefaultController extends AbstractController
                 }
             }
         }
-        return $this->render('default/_nav.html.twig', [
+        return $this->render('home/_nav.html.twig', [
             'hiddenBlogMenu' => $hiddenBlogMenu
         ]);
     }

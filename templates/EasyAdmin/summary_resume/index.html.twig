@@ -1,8 +1,6 @@
 {% extends '@!EasyAdmin/default/layout.html.twig' %}
 
-{#
-{% extends 'base.html.twig' %}
-#}
+
 {% block head_stylesheets %}
     {{ parent() }}
     {{ encore_entry_link_tags('ea_custom') }}
@@ -19,7 +17,6 @@
 
 {% block main %}
 
-    {{ dump(infos) }}
 
     <div class="container">
         <div class="row p-3">
@@ -166,15 +163,3 @@
 
 {% endblock %}
 
-{#
-    <a href="{{ path('summary_resume_edit', {id: resume_infos.id}) }}"  class="btn btn-primary">Edit</a>
-
-{{ resume_infos.id }}
-
- <div class="profile-container">
-                <div class="summaryBlockEdit">
-                    <a class="summaryBtnEdit" href="{{ path('summary_resume_edit', {id: resume_infos.id, entity: 'resumeMe'}) }}">
-                        <i class="fas fa-edit"></i>
-                    </a>
-                </div>
-#}

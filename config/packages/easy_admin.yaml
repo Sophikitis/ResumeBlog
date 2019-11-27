@@ -60,11 +60,11 @@ easy_admin:
         list:
           fields:
             - ID
-            - { property: 'filename', template: 'cvImage.html.twig', base_path: '%app.path.resume_image%', label: "profile Image" }
+            - { property: 'filename', template: 'resume_me/cvImage.html.twig', base_path: '%app.path.resume_image%', label: "profile Image" }
             - firstname
             - lastname
             - available
-            - { property: 'CvFile', template: 'cvFile.html.twig', base_path: '%app.path.resume_cv%' }
+            - { property: 'CvFile', template: 'resume_me/cvFile.html.twig', base_path: '%app.path.resume_cv%' }
         show:
           fields:
             - { property: 'filename', type: 'image', base_path: '%app.path.resume_image%' }

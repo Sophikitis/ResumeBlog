@@ -19,12 +19,12 @@
 
     {# NAVIGATION #}
 
-    {{ render(controller('App\\Controller\\DefaultController::nav', {})) }}
+    {{ render(controller('App\\Controller\\HomeController::nav', {})) }}
 
     <section class="home">
         <div class="container">
             {# SIDEBAR #}
-            {{ render(controller('App\\Controller\\DefaultController::side', {})) }}
+            {{ render(controller('App\\Controller\\HomeController::side', {})) }}
      <div id="swup" class="transition-fade">
          {% block body %}
 

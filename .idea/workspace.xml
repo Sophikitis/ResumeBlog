@@ -5,24 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61d64385-16b1-4f0f-b50b-4138ea4edd45" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/website.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/website.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/website.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/website.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/easy_admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/easy_admin.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/liip_imagine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/liip_imagine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/AdminBlogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/SummaryResumeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/SummaryResumeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ContactController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Articles.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Articles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/EasyAdmin/articles/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/EasyAdmin/articles/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/EasyAdmin/articles/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/EasyAdmin/articles/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base1.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base1.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/index.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cvImage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cvImage.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/default/_nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/_nav.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/default/_side.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/_side.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/default/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/contact.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/default/index1.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/index1.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/summary_resume/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/summary_resume/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cvFile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/resume_me/cvFile.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cvImage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/resume_me/cvImage.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/default/_nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/_nav.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/default/_side.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/_side.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/default/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact/contact.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/default/index1.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index1.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/summary_resume/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/EasyAdmin/summary_resume/index.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -216,6 +213,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Constants" value="false" />
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/blog" />
@@ -226,16 +224,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Controller/Admin" />
-      <recent name="$PROJECT_DIR$/public/uploads/website" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/blog" />
       <recent name="$PROJECT_DIR$/templates/default" />
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/src/EventListener" />
       <recent name="$PROJECT_DIR$/assets/js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/EasyAdmin" />
+      <recent name="$PROJECT_DIR$/templates/resume_me" />
+      <recent name="$PROJECT_DIR$/templates/contact" />
+      <recent name="$PROJECT_DIR$/src/Controller/Admin" />
+      <recent name="$PROJECT_DIR$/public/uploads/website" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -310,7 +311,7 @@
       <workItem from="1568724149759" duration="11952000" />
       <workItem from="1574868421837" duration="1112000" />
       <workItem from="1574869964524" duration="15000" />
-      <workItem from="1574869992747" duration="735000" />
+      <workItem from="1574869992747" duration="1795000" />
     </task>
     <servers />
   </component>
